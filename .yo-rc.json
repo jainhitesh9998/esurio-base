@@ -1,0 +1,37 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.infy.esurio.base"
+    },
+    "jhipsterVersion": "6.1.2",
+    "applicationType": "monolith",
+    "baseName": "esurio",
+    "packageName": "com.infy.esurio.base",
+    "packageFolder": "com/infy/esurio/base",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NjJmMmM2OTg4YjI4MDk2ZTYxNzY0MTRjY2FjM2YyZmVmYTI2ZDkzYmViN2E5ZTE2ODU4NDM0YTI2NTUxNDhjNTEwZTQ5NTBjN2RiNDgzZDAwYmRjNzg5NjA4YzczNjhmOWZlYjNlMjhjNjI2YzdjNTc2ZTk2NDQ0YmZmZWU1ZTM=",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false
+  }
+}
