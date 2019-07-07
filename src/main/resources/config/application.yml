@@ -130,7 +130,7 @@ jhipster:
   mail:
     from: esurio@localhost
   swagger:
-    default-include-pattern: /api/.*
+    default-include-pattern: /apis/.*
     title: esurio API
     description: esurio API documentation
     version: 0.0.1

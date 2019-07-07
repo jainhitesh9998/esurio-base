@@ -1,0 +1,45 @@
+{
+    "name": "Dishes",
+    "fields": [
+        {
+            "fieldName": "identifier",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "takeaway",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "servings",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "menus",
+            "otherEntityRelationshipName": "dishes",
+            "relationshipName": "menu",
+            "otherEntityField": "identifier"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "items",
+            "otherEntityRelationshipName": "dishes",
+            "relationshipName": "item",
+            "otherEntityField": "identifier"
+        }
+    ],
+    "changelogDate": "20190706115714",
+    "entityTableName": "dishes",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

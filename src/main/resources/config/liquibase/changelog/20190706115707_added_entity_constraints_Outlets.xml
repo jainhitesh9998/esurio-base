@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Outlets.
+    -->
+    <changeSet id="20190706115707-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="foodcourt_id"
+                                 baseTableName="outlets"
+                                 constraintName="fk_outlets_foodcourt_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="foodcourts"/>
+
+        <addForeignKeyConstraint baseColumnNames="vendor_id"
+                                 baseTableName="outlets"
+                                 constraintName="fk_outlets_vendor_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="vendors"/>
+
+    </changeSet>
+</databaseChangeLog>

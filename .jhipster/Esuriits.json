@@ -1,0 +1,30 @@
+{
+    "name": "Esuriits",
+    "fields": [
+        {
+            "fieldName": "identifier",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "centers",
+            "otherEntityRelationshipName": "esuriits",
+            "relationshipName": "center",
+            "otherEntityField": "identifier"
+        }
+    ],
+    "changelogDate": "20190706115706",
+    "entityTableName": "esuriits",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

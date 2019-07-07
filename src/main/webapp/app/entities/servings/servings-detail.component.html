@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="servings">
+            <h2><span>Servings</span> {{servings.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Identifier</span></dt>
+                <dd>
+                    <span>{{servings.identifier}}</span>
+                </dd>
+                <dt><span>Prepared</span></dt>
+                <dd>
+                    <span>{{servings.prepared}}</span>
+                </dd>
+                <dt><span>Served</span></dt>
+                <dd>
+                    <span>{{servings.served}}</span>
+                </dd>
+                <dt><span>Quantity</span></dt>
+                <dd>
+                    <span>{{servings.quantity}}</span>
+                </dd>
+                <dt><span>Order</span></dt>
+                <dd>
+                    <div *ngIf="servings.orderId">
+                        <a [routerLink]="['/orders', servings.orderId, 'view']">{{servings.orderIdentifier}}</a>
+                    </div>
+                </dd>
+                <dt><span>Dish</span></dt>
+                <dd>
+                    <div *ngIf="servings.dishId">
+                        <a [routerLink]="['/dishes', servings.dishId, 'view']">{{servings.dishIdentifier}}</a>
+                    </div>
+                </dd>
+                <dt><span>Attendant</span></dt>
+                <dd>
+                    <div *ngIf="servings.attendantId">
+                        <a [routerLink]="['/attendants', servings.attendantId, 'view']">{{servings.attendantIdentifier}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/servings', servings.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Servings.
+    -->
+    <changeSet id="20190706115716-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="order_id"
+                                 baseTableName="servings"
+                                 constraintName="fk_servings_order_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="orders"/>
+
+        <addForeignKeyConstraint baseColumnNames="dish_id"
+                                 baseTableName="servings"
+                                 constraintName="fk_servings_dish_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dishes"/>
+
+        <addForeignKeyConstraint baseColumnNames="attendant_id"
+                                 baseTableName="servings"
+                                 constraintName="fk_servings_attendant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="attendants"/>
+
+    </changeSet>
+</databaseChangeLog>

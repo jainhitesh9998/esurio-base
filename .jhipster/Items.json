@@ -1,0 +1,35 @@
+{
+    "name": "Items",
+    "fields": [
+        {
+            "fieldName": "identifier",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "image",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "vendors",
+            "otherEntityRelationshipName": "items",
+            "relationshipName": "vendor",
+            "otherEntityField": "identifier"
+        }
+    ],
+    "changelogDate": "20190706115711",
+    "entityTableName": "items",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

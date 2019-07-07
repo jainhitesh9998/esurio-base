@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="foodcourts">
+            <h2><span>Foodcourts</span> {{foodcourts.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Identifier</span></dt>
+                <dd>
+                    <span>{{foodcourts.identifier}}</span>
+                </dd>
+                <dt><span>Image</span></dt>
+                <dd>
+                    <div *ngIf="foodcourts.image">
+                        <a (click)="openFile(foodcourts.imageContentType, foodcourts.image)">open</a>
+                        {{foodcourts.imageContentType}}, {{byteSize(foodcourts.image)}}
+                    </div>
+                </dd>
+                <dt><span>Center</span></dt>
+                <dd>
+                    <div *ngIf="foodcourts.centerId">
+                        <a [routerLink]="['/centers', foodcourts.centerId, 'view']">{{foodcourts.centerIdentifier}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/foodcourts', foodcourts.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

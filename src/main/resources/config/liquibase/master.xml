@@ -14,6 +14,29 @@
     <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115704_added_entity_Centers.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115705_added_entity_Foodcourts.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115706_added_entity_Esuriits.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115707_added_entity_Outlets.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115708_added_entity_Menus.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115709_added_entity_Vendors.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115710_added_entity_Attendants.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115711_added_entity_Items.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115712_added_entity_Categories.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115713_added_entity_Tags.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115714_added_entity_Dishes.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115715_added_entity_Orders.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115716_added_entity_Servings.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20190706115705_added_entity_constraints_Foodcourts.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115706_added_entity_constraints_Esuriits.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115707_added_entity_constraints_Outlets.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115708_added_entity_constraints_Menus.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115710_added_entity_constraints_Attendants.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115711_added_entity_constraints_Items.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115712_added_entity_constraints_Categories.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115714_added_entity_constraints_Dishes.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115715_added_entity_constraints_Orders.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190706115716_added_entity_constraints_Servings.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

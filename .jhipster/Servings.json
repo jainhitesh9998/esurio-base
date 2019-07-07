@@ -1,0 +1,56 @@
+{
+    "name": "Servings",
+    "fields": [
+        {
+            "fieldName": "identifier",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "prepared",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "served",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "quantity",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "orders",
+            "otherEntityRelationshipName": "servings",
+            "relationshipName": "order",
+            "otherEntityField": "identifier"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "dishes",
+            "otherEntityRelationshipName": "servings",
+            "relationshipName": "dish",
+            "otherEntityField": "identifier"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "attendants",
+            "otherEntityRelationshipName": "servings",
+            "relationshipName": "attendant",
+            "otherEntityField": "identifier"
+        }
+    ],
+    "changelogDate": "20190706115716",
+    "entityTableName": "servings",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

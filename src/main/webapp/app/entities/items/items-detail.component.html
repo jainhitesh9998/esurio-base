@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="items">
+            <h2><span>Items</span> {{items.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Identifier</span></dt>
+                <dd>
+                    <span>{{items.identifier}}</span>
+                </dd>
+                <dt><span>Image</span></dt>
+                <dd>
+                    <div *ngIf="items.image">
+                        <a (click)="openFile(items.imageContentType, items.image)">open</a>
+                        {{items.imageContentType}}, {{byteSize(items.image)}}
+                    </div>
+                </dd>
+                <dt><span>Vendor</span></dt>
+                <dd>
+                    <div *ngIf="items.vendorId">
+                        <a [routerLink]="['/vendors', items.vendorId, 'view']">{{items.vendorIdentifier}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/items', items.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

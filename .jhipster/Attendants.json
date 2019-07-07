@@ -1,0 +1,30 @@
+{
+    "name": "Attendants",
+    "fields": [
+        {
+            "fieldName": "identifier",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "outlets",
+            "otherEntityRelationshipName": "attendants",
+            "relationshipName": "outlet",
+            "otherEntityField": "identifier"
+        }
+    ],
+    "changelogDate": "20190706115710",
+    "entityTableName": "attendants",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

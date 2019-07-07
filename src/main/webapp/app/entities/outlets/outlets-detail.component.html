@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="outlets">
+            <h2><span>Outlets</span> {{outlets.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Identifier</span></dt>
+                <dd>
+                    <span>{{outlets.identifier}}</span>
+                </dd>
+                <dt><span>Foodcourt</span></dt>
+                <dd>
+                    <div *ngIf="outlets.foodcourtId">
+                        <a [routerLink]="['/foodcourts', outlets.foodcourtId, 'view']">{{outlets.foodcourtIdentifier}}</a>
+                    </div>
+                </dd>
+                <dt><span>Vendor</span></dt>
+                <dd>
+                    <div *ngIf="outlets.vendorId">
+                        <a [routerLink]="['/vendors', outlets.vendorId, 'view']">{{outlets.vendorIdentifier}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/outlets', outlets.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

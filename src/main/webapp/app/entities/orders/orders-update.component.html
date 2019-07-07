@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-orders-heading">Create or edit a Orders</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_identifier">Identifier</label>
+                    <input type="text" class="form-control" name="identifier" id="field_identifier"
+                           formControlName="identifier"/>
+                    <div *ngIf="editForm.get('identifier').invalid && (editForm.get('identifier').dirty || editForm.get('identifier').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('identifier').errors.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_time">Time</label>
+                    <div class="d-flex">
+                        <input id="field_time" type="datetime-local" class="form-control" name="time" formControlName="time" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_takeaway">Takeaway</label>
+                    <input type="checkbox" class="form-control" name="takeaway" id="field_takeaway"
+                           formControlName="takeaway"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_scheduled">Scheduled</label>
+                    <div class="d-flex">
+                        <input id="field_scheduled" type="datetime-local" class="form-control" name="scheduled" formControlName="scheduled" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_confirmed">Confirmed</label>
+                    <input type="checkbox" class="form-control" name="confirmed" id="field_confirmed"
+                           formControlName="confirmed"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_delivered">Delivered</label>
+                    <input type="checkbox" class="form-control" name="delivered" id="field_delivered"
+                           formControlName="delivered"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_esuriit">Esuriit</label>
+                    <select class="form-control" id="field_esuriit" name="esuriit" formControlName="esuriitId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="esuriitsOption.id" *ngFor="let esuriitsOption of esuriits; trackBy: trackEsuriitsById">{{esuriitsOption.identifier}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_outlet">Outlet</label>
+                    <select class="form-control" id="field_outlet" name="outlet" formControlName="outletId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="outletsOption.id" *ngFor="let outletsOption of outlets; trackBy: trackOutletsById">{{outletsOption.identifier}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_attendant">Attendant</label>
+                    <select class="form-control" id="field_attendant" name="attendant" formControlName="attendantId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="attendantsOption.id" *ngFor="let attendantsOption of attendants; trackBy: trackAttendantsById">{{attendantsOption.identifier}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

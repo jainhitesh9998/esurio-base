@@ -1,0 +1,34 @@
+{
+    "name": "Menus",
+    "fields": [
+        {
+            "fieldName": "identifier",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "outlets",
+            "otherEntityRelationshipName": "menus",
+            "relationshipName": "outlet",
+            "otherEntityField": "identifier"
+        }
+    ],
+    "changelogDate": "20190706115708",
+    "entityTableName": "menus",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

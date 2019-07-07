@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="orders">
+            <h2><span>Orders</span> {{orders.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Identifier</span></dt>
+                <dd>
+                    <span>{{orders.identifier}}</span>
+                </dd>
+                <dt><span>Time</span></dt>
+                <dd>
+                    <span>{{orders.time}}</span>
+                </dd>
+                <dt><span>Takeaway</span></dt>
+                <dd>
+                    <span>{{orders.takeaway}}</span>
+                </dd>
+                <dt><span>Scheduled</span></dt>
+                <dd>
+                    <span>{{orders.scheduled}}</span>
+                </dd>
+                <dt><span>Confirmed</span></dt>
+                <dd>
+                    <span>{{orders.confirmed}}</span>
+                </dd>
+                <dt><span>Delivered</span></dt>
+                <dd>
+                    <span>{{orders.delivered}}</span>
+                </dd>
+                <dt><span>Esuriit</span></dt>
+                <dd>
+                    <div *ngIf="orders.esuriitId">
+                        <a [routerLink]="['/esuriits', orders.esuriitId, 'view']">{{orders.esuriitIdentifier}}</a>
+                    </div>
+                </dd>
+                <dt><span>Outlet</span></dt>
+                <dd>
+                    <div *ngIf="orders.outletId">
+                        <a [routerLink]="['/outlets', orders.outletId, 'view']">{{orders.outletIdentifier}}</a>
+                    </div>
+                </dd>
+                <dt><span>Attendant</span></dt>
+                <dd>
+                    <div *ngIf="orders.attendantId">
+                        <a [routerLink]="['/attendants', orders.attendantId, 'view']">{{orders.attendantIdentifier}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/orders', orders.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

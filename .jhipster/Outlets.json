@@ -1,0 +1,37 @@
+{
+    "name": "Outlets",
+    "fields": [
+        {
+            "fieldName": "identifier",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "foodcourts",
+            "otherEntityRelationshipName": "outlets",
+            "relationshipName": "foodcourt",
+            "otherEntityField": "identifier"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "vendors",
+            "otherEntityRelationshipName": "outlets",
+            "relationshipName": "vendor",
+            "otherEntityField": "identifier"
+        }
+    ],
+    "changelogDate": "20190706115707",
+    "entityTableName": "outlets",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

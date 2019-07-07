@@ -1,0 +1,64 @@
+{
+    "name": "Orders",
+    "fields": [
+        {
+            "fieldName": "identifier",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "time",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "takeaway",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "scheduled",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "confirmed",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "delivered",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "esuriits",
+            "otherEntityRelationshipName": "orders",
+            "relationshipName": "esuriit",
+            "otherEntityField": "identifier"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "outlets",
+            "otherEntityRelationshipName": "orders",
+            "relationshipName": "outlet",
+            "otherEntityField": "identifier"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "attendants",
+            "otherEntityRelationshipName": "orders",
+            "relationshipName": "attendant",
+            "otherEntityField": "identifier"
+        }
+    ],
+    "changelogDate": "20190706115715",
+    "entityTableName": "orders",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

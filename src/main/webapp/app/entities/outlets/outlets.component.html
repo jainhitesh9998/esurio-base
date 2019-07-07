@@ -1,0 +1,69 @@
+<div>
+    <h2 id="page-heading">
+        <span>Outlets</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-outlets" [routerLink]="['/outlets/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Outlets
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="outlets?.length === 0">
+        <span>No outlets found</span>
+    </div>
+    <div class="table-responsive" *ngIf="outlets?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Identifier</span></th>
+            <th><span>Foodcourt</span></th>
+            <th><span>Vendor</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let outlets of outlets ;trackBy: trackId">
+                <td><a [routerLink]="['/outlets', outlets.id, 'view' ]">{{outlets.id}}</a></td>
+                <td>{{outlets.identifier}}</td>
+                <td>
+                    <div *ngIf="outlets.foodcourtId">
+                        <a [routerLink]="['../foodcourts', outlets.foodcourtId , 'view' ]" >{{outlets.foodcourtIdentifier}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="outlets.vendorId">
+                        <a [routerLink]="['../vendors', outlets.vendorId , 'view' ]" >{{outlets.vendorIdentifier}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/outlets', outlets.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/outlets', outlets.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'outlets', { outlets: { popup: outlets.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

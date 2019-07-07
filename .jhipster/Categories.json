@@ -1,0 +1,37 @@
+{
+    "name": "Categories",
+    "fields": [
+        {
+            "fieldName": "identifier",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "items",
+            "otherEntityRelationshipName": "categories",
+            "relationshipName": "item",
+            "otherEntityField": "identifier"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "tags",
+            "otherEntityRelationshipName": "categories",
+            "relationshipName": "tag",
+            "otherEntityField": "identifier"
+        }
+    ],
+    "changelogDate": "20190706115712",
+    "entityTableName": "categories",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

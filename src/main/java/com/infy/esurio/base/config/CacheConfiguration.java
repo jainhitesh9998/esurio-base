@@ -43,6 +43,19 @@ public class CacheConfiguration {
             createCache(cm, com.infy.esurio.base.domain.User.class.getName());
             createCache(cm, com.infy.esurio.base.domain.Authority.class.getName());
             createCache(cm, com.infy.esurio.base.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.infy.esurio.base.domain.Centers.class.getName());
+            createCache(cm, com.infy.esurio.base.domain.Foodcourts.class.getName());
+            createCache(cm, com.infy.esurio.base.domain.Esuriits.class.getName());
+            createCache(cm, com.infy.esurio.base.domain.Outlets.class.getName());
+            createCache(cm, com.infy.esurio.base.domain.Menus.class.getName());
+            createCache(cm, com.infy.esurio.base.domain.Vendors.class.getName());
+            createCache(cm, com.infy.esurio.base.domain.Attendants.class.getName());
+            createCache(cm, com.infy.esurio.base.domain.Items.class.getName());
+            createCache(cm, com.infy.esurio.base.domain.Categories.class.getName());
+            createCache(cm, com.infy.esurio.base.domain.Tags.class.getName());
+            createCache(cm, com.infy.esurio.base.domain.Dishes.class.getName());
+            createCache(cm, com.infy.esurio.base.domain.Orders.class.getName());
+            createCache(cm, com.infy.esurio.base.domain.Servings.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

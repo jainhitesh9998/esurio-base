@@ -1,0 +1,85 @@
+<div>
+    <h2 id="page-heading">
+        <span>Orders</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-orders" [routerLink]="['/orders/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Orders
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="orders?.length === 0">
+        <span>No orders found</span>
+    </div>
+    <div class="table-responsive" *ngIf="orders?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Identifier</span></th>
+            <th><span>Time</span></th>
+            <th><span>Takeaway</span></th>
+            <th><span>Scheduled</span></th>
+            <th><span>Confirmed</span></th>
+            <th><span>Delivered</span></th>
+            <th><span>Esuriit</span></th>
+            <th><span>Outlet</span></th>
+            <th><span>Attendant</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let orders of orders ;trackBy: trackId">
+                <td><a [routerLink]="['/orders', orders.id, 'view' ]">{{orders.id}}</a></td>
+                <td>{{orders.identifier}}</td>
+                <td>{{orders.time | date:'medium'}}</td>
+                <td>{{orders.takeaway}}</td>
+                <td>{{orders.scheduled | date:'medium'}}</td>
+                <td>{{orders.confirmed}}</td>
+                <td>{{orders.delivered}}</td>
+                <td>
+                    <div *ngIf="orders.esuriitId">
+                        <a [routerLink]="['../esuriits', orders.esuriitId , 'view' ]" >{{orders.esuriitIdentifier}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="orders.outletId">
+                        <a [routerLink]="['../outlets', orders.outletId , 'view' ]" >{{orders.outletIdentifier}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="orders.attendantId">
+                        <a [routerLink]="['../attendants', orders.attendantId , 'view' ]" >{{orders.attendantIdentifier}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/orders', orders.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/orders', orders.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'orders', { outlets: { popup: orders.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

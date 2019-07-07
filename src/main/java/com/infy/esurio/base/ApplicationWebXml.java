@@ -1,5 +1,6 @@
 package com.infy.esurio.base;
 
+import com.infy.esurio.base.EsurioApp;
 import com.infy.esurio.base.config.DefaultProfileUtil;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

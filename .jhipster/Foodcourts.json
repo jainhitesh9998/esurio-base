@@ -1,0 +1,35 @@
+{
+    "name": "Foodcourts",
+    "fields": [
+        {
+            "fieldName": "identifier",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "image",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "centers",
+            "otherEntityRelationshipName": "foodcourts",
+            "relationshipName": "center",
+            "otherEntityField": "identifier"
+        }
+    ],
+    "changelogDate": "20190706115705",
+    "entityTableName": "foodcourts",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
